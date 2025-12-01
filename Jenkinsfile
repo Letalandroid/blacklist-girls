@@ -1,5 +1,5 @@
 pipeline {
-  agent { label 'raspi' } // usa el label del nodo (ajusta si lo llamaste distinto)
+  agent { label 'raspi-agent' } // usa el label del nodo (ajusta si lo llamaste distinto)
   stages {
     stage('Checkout') {
       steps {
