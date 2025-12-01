@@ -1,7 +1,11 @@
 pipeline {
-  stage('Serve') {
-    steps {
-      sh 'serve -s . -l 3015'
+  agent { label 'raspi-agent' } 
+  stages {
+    stage('Serve') {
+      steps {
+        // Arranca serve en background; asume que 'serve' ya está instalado en el agente
+        sh 'serve -s . -l 3015 &'
+      }
     }
   }
 }
